@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>داشبورد</title>
+</head>
+<body>
+    <h1>داشبورد</h1>
+    <a href="{{ url_for('create_config') }}">ایجاد کانفیگ جدید</a>
+    <h2>کانفیگ‌های شما</h2>
+    <ul>
+        {% for config in configs %}
+            <li><a href="{{ url_for('download_config', config_id=config[0]) }}">دانلود کانفیگ {{ config[0] }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('logout') }}">خروج</a>
+</body>
+</html>
